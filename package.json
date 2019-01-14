@@ -4,9 +4,33 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "yarn run babel-build",
+    "build-web": "BABEL_ENV=web babel src -d web",
+    "build-web:watch": "BABEL_ENV=web babel src -w -d web --source-maps inline --copy-files",
+    "build-native": "babel src -d native",
+    "build-native:watch": "babel src -w -d native",
+    "babel-build": "babel src -d build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-auto-import": "^0.7.1",
+    "babel-plugin-react-native-web": "0.9.6",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "moment": "^2.23.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.4.1",
+    "react-native-web": "0.9.6",
+    "react-native": "0.55.4"
+  }
 }
